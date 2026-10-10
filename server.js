@@ -2,7 +2,8 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 4180;
+const PORT = process.env.PORT || 4180;
+const BASE_DIR = fs.existsSync(path.join(__dirname, 'index.html')) ? __dirname : process.cwd();
 
 const MIME_TYPES = {
   '.html': 'text/html',
@@ -21,7 +22,7 @@ const MIME_TYPES = {
 const server = http.createServer((req, res) => {
   const parsedUrl = req.url.split('?')[0];
   let relativePath = parsedUrl === '/' ? 'index.html' : parsedUrl.replace(/^\//, '');
-  let filePath = path.join(__dirname, relativePath);
+  let filePath = path.join(BASE_DIR, relativePath);
 
   fs.readFile(filePath, (err, content) => {
     if (err) {

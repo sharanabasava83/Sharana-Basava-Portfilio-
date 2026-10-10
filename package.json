@@ -1,9 +1,9 @@
 {
   "name": "sharanabasava-portfolio",
   "version": "1.0.0",
-  "description": "Royal Archival Engineering Ledger & Portfolio of Sharanabasava",
-  "main": "server.js",
+  "description": "Portfolio of Sharanabasava",
   "scripts": {
+    "dev": "node server.js",
     "start": "node server.js"
   },
   "author": "Sharanabasava",
