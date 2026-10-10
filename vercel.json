@@ -1,12 +1,5 @@
 {
-  "cleanUrls": true,
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
+  "framework": null,
+  "outputDirectory": ".",
+  "cleanUrls": true
 }
